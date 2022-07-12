@@ -1,0 +1,20 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                git 'https://github.com/rupamdhote/hutch.git'
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo 'successfuklt deployed build stage' 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                sh 'mkdir rosn' 
+            }
+        }
+    }
+}
